@@ -1,0 +1,114 @@
+#mainText {
+  text-align: center
+}
+
+.jumbotron {
+  margin-top: 25%;
+  background-color: transparent;
+}
+
+#guesser {
+  padding: 5px;
+  margin-right: 15px
+}
+
+#writer {
+  padding: 5px;
+  margin-left: 15px
+}
+
+i {
+  font-size: 35px
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+#redo {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  color: #17a2b8 !important;
+}
+
+#back {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  color: #17a2b8 !important;
+}
+
+#randomWord {
+  color: #17a2b8;
+  font-size: 50px
+}
+
+#close:hover {
+  cursor: pointer;
+
+}
+
+#close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 17px;
+  color: white !important
+}
+
+#modalBody {
+  max-height: 200px;
+  max-width: 750px;
+  overflow-y: auto;
+}
+
+body {
+  /* background-color: lightsteelblue; */
+  background-image: url("./pexels-karolina-grabowska-4194857.jpg");
+
+}
+
+#timer {
+  font-size: 120px;
+  color: #17a2b8
+}
+
+#input {
+  background-image: url(#17a2b8);
+  border-color: #17a2b8;
+  color: #17a2b8;
+}
+
+#guessedWord {
+  font-size: 90px;
+  overflow-wrap: break-word;
+  color: #17a2b8;
+  font-weight: 400;
+  /* position: relative;
+  bottom: 50px; */
+}
+
+h1{
+  position: relative;
+  bottom: 10px;
+  font-size: 55px
+}
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .container {
+    position: relative;
+    bottom: 100px;
+  }
+
+  #timer {
+    position: relative;
+    bottom: 100px;
+    font-size: 200px
+  }
+
+  #guessedWord {
+    position: relative;
+    bottom: 50px;
+  }
+}
