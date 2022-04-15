@@ -230,7 +230,11 @@ function App() {
                   setWriter(false);
                   setHomeScreen(true);
                   setDisplayWord(false);
-                  setGuessedWord(false)
+                  setGuessedWord(false);
+                  setIsDrink(false);
+                  setIsNoun(false);
+                  setIsMovie(false);
+                  setIsFood(false);
                 }}
               ></i>
             </div> : <div> </div>
@@ -309,7 +313,11 @@ function App() {
                   onClick={e => {
                     setWriter(false);
                     setHomeScreen(true);
-                    setDisplayWord(false)
+                    setDisplayWord(false);
+                    setIsDrink(false);
+                    setIsNoun(false);
+                    setIsMovie(false);
+                    setIsFood(false);
                   }}
                 ></i>
               </div>
@@ -332,7 +340,11 @@ function App() {
                     setWriter(false);
                     setHomeScreen(true);
                     setDisplayWord(false);
-                    setGuessedWord(false)
+                    setGuessedWord(false);
+                    setIsDrink(false);
+                    setIsNoun(false);
+                    setIsMovie(false);
+                    setIsFood(false);
                   }}
                 ></i>
               </div>
