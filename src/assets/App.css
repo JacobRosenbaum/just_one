@@ -41,7 +41,7 @@ i:hover {
 
 #randomWord {
   color: #17a2b8;
-  font-size: 50px
+  font-size: 100px
 }
 
 #close:hover {
@@ -70,7 +70,7 @@ body {
 }
 
 #timer {
-  font-size: 120px;
+  font-size: 150px;
   color: #17a2b8
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 #guessedWord {
-  font-size: 90px;
+  font-size: 150px;
   overflow-wrap: break-word;
   color: #17a2b8;
   font-weight: 400;
@@ -89,7 +89,7 @@ body {
   bottom: 50px; */
 }
 
-h1{
+h1 {
   position: relative;
   bottom: 10px;
   font-size: 55px
@@ -103,13 +103,17 @@ h1{
 
   #timer {
     position: relative;
-    bottom: 100px;
+    bottom: 130px;
     font-size: 200px
   }
 
   #guessedWord {
     position: relative;
-    bottom: 50px;
+    bottom: 70px;
+  }
+  #randomWord {
+    position: relative;
+    bottom: 90px;
   }
 }
 
@@ -121,12 +125,16 @@ h1{
 
   #timer {
     position: relative;
-    bottom: 100px;
+    bottom: 130px;
     font-size: 200px
   }
 
   #guessedWord {
     position: relative;
-    bottom: 50px;
+    bottom: 70px;
+  }
+  #randomWord {
+    position: relative;
+    bottom: 90px;
   }
 }
