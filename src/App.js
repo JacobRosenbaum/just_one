@@ -76,6 +76,7 @@ function App() {
       const data = await response.json();
       setRandomWord(data.drinks[0].strDrink);
       displayWords();
+      setWriter(false);
     } catch (error) {
       console.log(error);
     }
@@ -108,15 +109,19 @@ function App() {
 
   function generateWord() {
     if (isMovie) {
+      setWriter(false);
       generateMovie();
     }
-    if (isNoun)  {
+    if (isNoun) {
+      setWriter(false);
       generateNoun();
     }
-    if (isFood)  {
+    if (isFood) {
+      setWriter(false);
       generateFood();
     }
-    if (isDrink)  {
+    if (isDrink) {
+      setWriter(false);
       generateDrinks();
     }
   }
@@ -211,10 +216,13 @@ function App() {
                 setGuessedWord(true);
                 setWriter(false)
               }}>
-                <input id='input' onKeyDown={e => {
-                  setWord(e.target.value);
-                  console.log(word)
-                }}>
+                <input
+                  placeholder = 'Give it a guess, ern!'
+                  style={{textAlign:'center'}}
+                  id='input' onKeyDown={e => {
+                    setWord(e.target.value);
+                    console.log(word)
+                  }}>
                 </input>
               </form>
               <i id='back' className="fa-solid fa-x"
