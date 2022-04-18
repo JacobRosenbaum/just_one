@@ -73,7 +73,22 @@ function App() {
       const string = data.meals[0].strMeal.toString()
       const split = string.split(" ")
       console.log(split)
-      setRandomWord(split[0] + " " + split[1] + " " + split[2]);
+      if (split[1] == undefined) {
+        setRandomWord(split[0])
+      }
+      else if (split[2] == undefined) {
+        setRandomWord(split[0] + " " + split[1])
+      }
+      else if (split[3] == undefined) {
+        setRandomWord(split[0] + " " + split[1] + " " + split[2])
+      }
+      else if (split[4] == undefined) {
+        setRandomWord(split[0] + " " + split[1] + " " + split[2] + " " + split[3])
+      }
+      else if (split[5] == undefined) {
+        setRandomWord(split[0] + " " + split[1] + " " + split[2] + " " + split[3] + " " + split[4])
+      }
+
       console.log(randomWord)
       displayWords();
     } catch (error) {
