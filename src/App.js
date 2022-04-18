@@ -52,7 +52,14 @@ function App() {
     try {
       const response = await fetch('https://random-word-form.herokuapp.com/random/noun/?count=1');
       const data = await response.json();
-      setRandomWord(data.toString().toUpperCase());
+      const string = data.toString()
+      let split = string.split('')
+      console.log(split)
+      const firstLetter = split[0].toUpperCase()
+      console.log(firstLetter)
+      let substring = string.substring(1)
+      console.log(substring)
+      setRandomWord(firstLetter + substring);
       displayWords();
     } catch (error) {
       console.log(error);
@@ -63,7 +70,11 @@ function App() {
     try {
       const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
       const data = await response.json();
-      setRandomWord(data.meals[0].strMeal);
+      const string = data.meals[0].strMeal.toString()
+      const split = string.split(" ")
+      console.log(split)
+      setRandomWord(split[0] + " " + split[1] + " " + split[2]);
+      console.log(randomWord)
       displayWords();
     } catch (error) {
       console.log(error);
@@ -130,7 +141,7 @@ function App() {
     setDisplayWord(true);
     setTimer(true);
     setCategory(false)
-    console.log(randomWord)
+    // console.log(randomWord)
   }
 
   function openModal() {
@@ -217,8 +228,8 @@ function App() {
                 setWriter(false)
               }}>
                 <input
-                  placeholder = 'Give it a guess, ern!'
-                  style={{textAlign:'center'}}
+                  placeholder='Give it a guess, ern!'
+                  style={{ textAlign: 'center' }}
                   id='input' onKeyDown={e => {
                     setWord(e.target.value);
                     console.log(word)
@@ -240,65 +251,73 @@ function App() {
             </div> : <div> </div>
           }
           {category ?
-            <div>
-              <button
-                style={{ marginRight: '10px' }}
-                type="button"
-                className="btn btn-info"
-                onClick={e => {
-                  setIsNoun(false);
-                  setIsMovie(true);
-                  setIsFood(false);
-                  setIsDrink(false);
-                }}
-              >
-                Generate Random Movie
-              </button>
-              <button
-                // style={{ marginLeft: '10px' }}
-                type="button"
-                className="btn btn-info"
-                onClick={e => {
-                  setIsNoun(true);
-                  setIsMovie(false);
-                  setIsFood(false);
-                  setIsDrink(false);
-                }}
-              >
-                Generate Random Noun
-              </button>
-              <button
-                style={{ marginLeft: '10px' }}
-                type="button"
-                className="btn btn-info"
-                onClick={e => {
-                  setIsNoun(false);
-                  setIsMovie(false);
-                  setIsFood(true);
-                  setIsDrink(false);
-                }}
-              >
-                Generate Random Food
-              </button>
-              <button
-                style={{ marginTop: '20px' }}
-                type="button"
-                className="btn btn-info"
-                onClick={e => {
-                  setIsNoun(false);
-                  setIsMovie(false);
-                  setIsFood(false);
-                  setIsDrink(true);
-                }}
-              >
-                Generate Random Drank
-              </button>
+            <div id='menuButtons'>
+              <div>
+                <button
+                  style={{ marginBottom: '20px', marginRight: '80px' }}
+                  type="button"
+                  className="btn btn-info"
+                  onClick={e => {
+                    setIsNoun(false);
+                    setIsMovie(true);
+                    setIsFood(false);
+                    setIsDrink(false);
+                  }}
+                >
+                  Generate Random Movie
+                </button>
+              </div>
+              <div>
+                <button
+                  style={{ marginBottom: '20px', marginLeft: '80px' }}
+                  type="button"
+                  className="btn btn-info"
+                  onClick={e => {
+                    setIsNoun(true);
+                    setIsMovie(false);
+                    setIsFood(false);
+                    setIsDrink(false);
+                  }}
+                >
+                  Generate Random Noun
+                </button>
+              </div>
+              <div>
+                <button
+                  style={{ marginBottom: '20px', marginRight: '80px' }}
+                  type="button"
+                  className="btn btn-info"
+                  onClick={e => {
+                    setIsNoun(false);
+                    setIsMovie(false);
+                    setIsFood(true);
+                    setIsDrink(false);
+                  }}
+                >
+                  Generate Random Food
+                </button>
+              </div>
+              <div>
+                <button
+                  style={{ marginLeft: '80px' }}
+                  type="button"
+                  className="btn btn-info"
+                  onClick={e => {
+                    setIsNoun(false);
+                    setIsMovie(false);
+                    setIsFood(false);
+                    setIsDrink(true);
+                  }}
+                >
+                  Generate Random Drank
+                </button>
+              </div>
             </div> : <div></div>
           }
           {displayWord ?
             <div>
               {timer ?
-                <Countdown date={Date.now() + 3000} renderer={renderer} key={randomWord} />
+                <Countdown style={{ marginBottom: '130px' }} date={Date.now() + 3000} renderer={renderer} key={randomWord} />
                 : <div>  </div>
               }
               <div>

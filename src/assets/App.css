@@ -3,7 +3,7 @@
 }
 
 .jumbotron {
-  margin-top: 25%;
+  /* margin-top: 25%; */
   background-color: transparent;
 }
 
@@ -95,46 +95,71 @@ h1 {
   font-size: 55px
 }
 
+#menuButtons{
+margin: auto
+}
+
+@media only screen 
+    and (device-width: 375px) 
+    and (device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      #timer {
+        position: relative;
+        /* top: 30px; */
+        font-size: 200px
+      }
+    
+      #guessedWord {
+        position: relative;
+        /* top: 30px; */
+      }
+      /* #randomWord {
+        position: fixed;
+        top: 10px !important;
+      } */
+
+    }
+
 @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-  .container {
+  /* .container {
     position: relative;
     bottom: 100px;
-  }
+  } */
 
   #timer {
     position: relative;
-    bottom: 130px;
+    /* top: 30px; */
     font-size: 200px
   }
 
   #guessedWord {
     position: relative;
-    bottom: 70px;
+    /* top: 30px; */
   }
-  #randomWord {
-    position: relative;
-    bottom: 90px;
-  }
+  /* #randomWord {
+    position: fixed;
+    top: 10px !important;
+  } */
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-  .container {
+  /* .container {
     position: relative;
     bottom: 100px;
-  }
+  } */
 
   #timer {
     position: relative;
-    bottom: 130px;
+    /* top: 30px; */
     font-size: 200px
   }
 
   #guessedWord {
     position: relative;
-    bottom: 70px;
+    /* top: 30px; */
   }
-  #randomWord {
-    position: relative;
-    bottom: 90px;
-  }
+  /* #randomWord {
+    position: fixed;
+    top: 10px !important;
+  } */
 }
